@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -38,12 +41,7 @@ public class ProjetServiceImp implements ProjetServiceInter{
 					()->new EntityNotFoundException("Projet à modifier est introuvable"));
 			return ProjetResponseDto.buildDtoFromEntity(projetRepository.save(ProjetRequestDto.buildUpdate(projetRequestDto, projet)));
 		}
-		
-		//Projet projet = projetRepository.findByNomProjetIgnoreCase(projetRequestDto.getNomProjet());
-		
-		/*if(projet != null) {
-			throw new DuplicationEntityException("Un projet avec le nom : "+projet.getNomProjet() +" existe deja dans la BD"); 
-		}*/
+
 		
 		 List<EtatTache> etatTaches = new ArrayList<>();
 		
@@ -84,22 +82,20 @@ public class ProjetServiceImp implements ProjetServiceInter{
 	@Override
 	public String deleteProjet(Long id) throws EntityNotFoundException {
 	
-		Projet p = projetRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("Projet avec l'ID "+id +" non Trouver"));
+		Projet p = projetRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("Projet introuvable avec l'ID "+id +" non Trouver"));
 		projetRepository.delete(p);
 		return "Ce projet est definitivement suprimer en BD";
 	}
 
 	@Override
-	public List<ProjetResponseDto> getAllProjet() {
-		List<Projet> p = new ArrayList<>(); 
-		projetRepository.findAll().forEach(p::add);
-		return ProjetResponseDto.buildListDtoFromListProjet(p);
+	public Page<ProjetResponseDto> getAllProjet(String keyword, Pageable pageRequest) {
+		return ProjetResponseDto.buildPageDtoFromPageEntity(projetRepository.findAllByKeyWord(keyword, pageRequest));
 	}
 
 	@Override
-	public ProjetResponseDto getProjet(Long id) throws InvalidEntityException {
-		Projet projet = projetRepository.findById(id).orElseThrow(()
-				-> new InvalidEntityException("Aucun prejet avec l'Id "+id));
+	public ProjetResponseDto getProjet(Long id) throws EntityNotFoundException {
+		Projet projet = projetRepository.findById(id)
+				.orElseThrow(() -> new EntityNotFoundException("Projet introuvable avec l'Id "+id));
 		return ProjetResponseDto.buildDtoFromEntity(projet);
 	}
 	

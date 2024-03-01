@@ -3,9 +3,12 @@ package com.if5.todolist.models.dtos.utilisateur;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
+import com.if5.todolist.models.dtos.projet.ProjetResponseDto;
 import com.if5.todolist.models.dtos.role.RoleResponseDto;
+import com.if5.todolist.models.entities.Projet;
 import com.if5.todolist.models.entities.Utilisateur;
 
 import lombok.AllArgsConstructor;
@@ -13,11 +16,10 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.domain.Page;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Builder
 public class UtilisateurResponseDto {
     
@@ -30,7 +32,6 @@ public class UtilisateurResponseDto {
 
     private String prenom;
 
-
     private String villeDeResidence;
 
     private String paysOrigine;
@@ -40,10 +41,6 @@ public class UtilisateurResponseDto {
     private LocalDate dateDeNaissance;
 
     private List<RoleResponseDto> roles ;
-
-   // private List<TacheResponseDto> listTache ;
-    
-    //private List<TacheUtilisateur> listTacheUtilisateur;
 
 
     public static UtilisateurResponseDto buildUserDtoFromUser(Utilisateur user){
@@ -56,8 +53,7 @@ public class UtilisateurResponseDto {
                      .villeDeResidence(user.getVilleDeResidence())
                      .paysOrigine(user.getPaysOrigine())
                      .lieuDeNaissance(user.getLieuDeNaissance())
-                     .roles(RoleResponseDto.buildListDtoFromListRole(user.getRoles() ))
-                    // .listTache(TacheResponseDto.buildListDtoFromListTache(user.getListTache()))
+                     .roles(RoleResponseDto.buildListDtoFromListRole(user.getRoles()))
                      .build();
     }
 
@@ -76,7 +72,8 @@ public class UtilisateurResponseDto {
 
     public static List<UtilisateurResponseDto> buildListDtoFromListUtilisateur(List<Utilisateur> listUtilisateur){
         return listUtilisateur.stream().map(UtilisateurResponseDto::buildUserDtoFromUser).collect(Collectors.toList());
-                     
     }
-
+    public static Page<UtilisateurResponseDto> buildPageDtoFromPageEntity(Page<Utilisateur> pageEntityList) {
+        return Objects.isNull(pageEntityList) ? Page.empty() : pageEntityList.map(UtilisateurResponseDto::buildUserDtoFromUser);
+    }
 }

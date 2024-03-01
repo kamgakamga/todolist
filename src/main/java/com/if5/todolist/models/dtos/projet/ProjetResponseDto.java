@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import com.if5.todolist.models.dtos.etatTache.EtatTacheResponseDto;
@@ -17,6 +18,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.data.domain.Page;
 
 @Getter
 @Setter
@@ -63,4 +65,9 @@ public class ProjetResponseDto {
 	        return listProjet.stream().map(ProjetResponseDto::buildDtoFromEntity).collect(Collectors.toList());
 	                     
 	    }
+
+	public static Page<ProjetResponseDto> buildPageDtoFromPageEntity(Page<Projet> pageEntityList) {
+		return Objects.isNull(pageEntityList) ? Page.empty() : pageEntityList.map(ProjetResponseDto::buildDtoFromEntity);
+	}
+
 }

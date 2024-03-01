@@ -1,5 +1,7 @@
 package com.if5.todolist.models.entities.parametrages;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.if5.todolist.models.entities.AuditModel;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -9,6 +11,7 @@ import javax.persistence.*;
 @Entity(name = "services")
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,  property="id")
 public class Services extends AuditModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

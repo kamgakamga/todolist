@@ -2,6 +2,7 @@ package com.if5.todolist.repositories;
 
 import java.util.List;
 
+import com.if5.todolist.models.entities.Projet;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -21,7 +22,9 @@ public interface UtilisateurRepository extends JpaRepository<Utilisateur,Long> {
     @Query("SELECT U FROM Utilisateur U WHERE U.verificationCode=?1")
     public Utilisateur findByVerificationCode(String code);
     
-    //public Utilisateur findByUserNameAndNomConteaints();
-    
+    //public Utilisateur findByUserNameAndNomContaints();
+    @Query("SELECT data FROM Utilisateur data")
+    Page<Utilisateur> findAllByKeyWord(String keyWord, Pageable pageable);
+
     List<Utilisateur> findUtilisateursByRolesId(Long roleId);
 }

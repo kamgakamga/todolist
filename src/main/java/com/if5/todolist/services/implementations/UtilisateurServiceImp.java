@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -45,22 +44,25 @@ import net.bytebuddy.utility.RandomString;
 @Transactional
 public class UtilisateurServiceImp implements UtilisateurServiceInter{
 
-	           @Autowired
-	           private JavaMailSender javaMailSender;
-	           
-	           @Autowired
-               private UtilisateurRepository utilisateurRepository;
-	           
-	           @Autowired
-               private RoleRepository roleRepository;
-	           
-	           @Autowired
-	           private AttributionRepository attributionRepository;
-	           
-	           @Autowired
-               private BCryptPasswordEncoder bCryptPasswordEncoder;
+	           private final JavaMailSender javaMailSender;
+               private final UtilisateurRepository utilisateurRepository;
+               private final RoleRepository roleRepository;
+	           private final AttributionRepository attributionRepository;
+               private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    @Override
+	public UtilisateurServiceImp(JavaMailSender javaMailSender,
+								 UtilisateurRepository utilisateurRepository,
+								 RoleRepository roleRepository,
+								 AttributionRepository attributionRepository,
+								 BCryptPasswordEncoder bCryptPasswordEncoder) {
+		this.javaMailSender = javaMailSender;
+		this.utilisateurRepository = utilisateurRepository;
+		this.roleRepository = roleRepository;
+		this.attributionRepository = attributionRepository;
+		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+	}
+
+	@Override
     public UtilisateurResponseDto saveUser(UtilisateurRequestDto utilisateurRequestDto, String siteURL)
     		   throws EntityNotFoundException, MessagingException, UnsupportedEncodingException {
     	
@@ -105,21 +107,8 @@ public class UtilisateurServiceImp implements UtilisateurServiceInter{
     }
  
     @Override
-    public List<UtilisateurResponseDto> getAllUsers() {
-    	
-    	Pageable peageable = PageRequest.of(0,10);
-    	
-    	Page<Utilisateur> pageOfUser =  utilisateurRepository.findAll(peageable);
-    	// List<Utilisateur> listOfUser = pageOfUser.getContent();
-    	 List<Utilisateur> listOfUser = utilisateurRepository.findAll();
-
-    	       // List<String>  l=  listOfUser.stream().map(u ->u.getNom().toUpperCase()).collect(Collectors.toList());
-    	       
-        
-    	 return  listOfUser.stream()
-        		.map(UtilisateurResponseDto::buildUserDtoFromUser)
-        		.collect(Collectors.toList());
-       // return UtilisateurResponseDto.buildListDtoFromListUtilisateur(listOfUser);
+    public Page<UtilisateurResponseDto> getAllUsers(String keyword, Pageable pageRequest) {
+		return UtilisateurResponseDto.buildPageDtoFromPageEntity(utilisateurRepository.findAllByKeyWord(keyword, pageRequest));
     }
 
     @Override
