@@ -50,8 +50,15 @@ public class ProjetController{
 	}
 
 	@DeleteMapping("projets/{id}")
-	public ResponseEntity<String> deleteProjet(@PathVariable Long id) throws EntityNotFoundException {
-		return ResponseEntity.ok(projetService.deleteProjet(id));
+	public ResponseEntity<ApiResponse<String>> deleteProjet(@PathVariable Long id) throws EntityNotFoundException {
+        try{
+            log.info("Suppresion d'un projets dans le système en cours "+id);
+
+            return ResponseEntity.ok(new ApiResponse(true,SUCESS_MESSAGE ,projetService.deleteProjet(id), new Date()));
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(new ApiResponse(false, e.getMessage(), e.getCause(),new Date()));
+        }
 	}
 	  
 	@GetMapping("projets")
