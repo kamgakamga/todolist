@@ -2,7 +2,9 @@ package com.if5.todolist.models.dtos.utilisateur;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
@@ -51,15 +53,15 @@ public class UtilisateurRequestDto {
 
     private LocalDate dateDeNaissance;
 
-    private List<Long> roles ;
+    private Set<Long> roles ;
    
     private List<Long> listTacheUtilisateur;
     
 
 
-    public static Utilisateur buildUserFromDto(UtilisateurRequestDto dto, List<Role> listRole, List<Attribution> listTacheUtilisateur){
+    public static Utilisateur buildUserFromDto(UtilisateurRequestDto dto, Set<Role> listRole, List<Attribution> listTacheUtilisateur){
 
-        return Utilisateur.builder()
+        return Utilisateur.UtilisateurBuilder.anUtilisateur()
                      .userName(dto.getUserName())
                      .nom(dto.getNom())
                      .prenom(dto.getPrenom())
@@ -70,7 +72,7 @@ public class UtilisateurRequestDto {
                      .paysOrigine(dto.getPaysOrigine())
                      .lieuDeNaissance(dto.getLieuDeNaissance())
                      .dateDeNaissance(dto.getDateDeNaissance())
-                     .roles(listRole == null ? new ArrayList<>() : listRole)
+                     .roles(listRole == null ? new HashSet<>() : listRole)
                      .listTacheUtilisateur(listTacheUtilisateur == null? new ArrayList<>() : listTacheUtilisateur )
                    //s  .listTache(listTache == null ? new ArrayList<>() : listTache)
                      .build();

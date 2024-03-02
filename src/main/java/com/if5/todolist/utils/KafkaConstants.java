@@ -1,4 +1,4 @@
-package com.if5.todolist.controllers.utils;
+package com.if5.todolist.utils;
 
 public class KafkaConstants {
 	

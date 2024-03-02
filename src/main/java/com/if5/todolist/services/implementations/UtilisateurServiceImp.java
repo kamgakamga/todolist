@@ -7,7 +7,9 @@ import static com.if5.todolist.config.SecurityConstants.COMPANY;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import javax.mail.MessagingException;
@@ -78,7 +80,7 @@ public class UtilisateurServiceImp implements UtilisateurServiceInter{
 			
 		}
     	
-        List<Role> listRole = new ArrayList<>();
+        Set<Role> listRole = new HashSet<>();
         
         for(Long l: utilisateurRequestDto.getRoles()){
         	
@@ -153,7 +155,7 @@ public class UtilisateurServiceImp implements UtilisateurServiceInter{
             }
             
             
-            List<Role> roles = user.getRoles();
+            Set<Role> roles = user.getRoles();
             
             if(roles.contains(role)) {
                 throw new EntityNotFoundException("Cet utilisateur a déja le role "+ "'"+role.getNom()+ "'");
@@ -227,7 +229,7 @@ public class UtilisateurServiceImp implements UtilisateurServiceInter{
 		System.out.println("ID ====> "+id);
 		Utilisateur user = utilisateurRepository.findById(id).orElseThrow(()
 				-> new EntityNotFoundException("Utilisateur non trouver."));
-		user.setRoles(new ArrayList<>());
+		user.setRoles(new HashSet<>());
 		user.setListTacheUtilisateur(new ArrayList<>());
 	 // utilisateurRepository.delete(user);
 		utilisateurRepository.deleteById(id);

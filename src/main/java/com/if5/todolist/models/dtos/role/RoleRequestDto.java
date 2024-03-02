@@ -20,7 +20,7 @@ public class RoleRequestDto {
 
 
     public static Role buildRoleFromDto(RoleRequestDto dto){
-        return Role.builder()
+        return Role.RoleBuilder.aRole()
                       .nom(dto.getNom())
                       .build();
     }

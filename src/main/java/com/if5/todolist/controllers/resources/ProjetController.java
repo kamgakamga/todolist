@@ -1,12 +1,10 @@
 package com.if5.todolist.controllers.resources;
 
 import java.util.Date;
-import java.util.List;
 
 import com.if5.todolist.models.dtos.ApiResponse;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -19,7 +17,7 @@ import com.if5.todolist.exceptions.EntityNotFoundException;
 import com.if5.todolist.models.dtos.projet.ProjetRequestDto;
 import com.if5.todolist.models.dtos.projet.ProjetResponseDto;
 import com.if5.todolist.services.interfaces.ProjetServiceInter;
-import static com.if5.todolist.controllers.utils.StringsUtils.SUCESS_MESSAGE;
+import static com.if5.todolist.utils.StringsUtils.SUCESS_MESSAGE;
 
 import io.swagger.annotations.Api;
 

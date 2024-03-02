@@ -2,6 +2,7 @@ package com.if5.todolist.models.dtos.utilisateur;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -59,14 +60,14 @@ public class UtilisateurResponseDto {
 
     public static Utilisateur buildUserFromDto(UtilisateurResponseDto dto){
 
-        return Utilisateur.builder()
+        return Utilisateur.UtilisateurBuilder.anUtilisateur()
                      .userName(dto.getUserName())
                      .nom(dto.getNom())
                      .prenom(dto.getPrenom())
                      .villeDeResidence(dto.getVilleDeResidence())
                      .paysOrigine(dto.getPaysOrigine())
                      .lieuDeNaissance(dto.getLieuDeNaissance())
-                     .roles(dto.getRoles() == null? new ArrayList<>() : RoleResponseDto.buildListRoleFromListDto(dto.getRoles()))
+                     .roles(dto.getRoles() == null? new HashSet<>() : RoleResponseDto.buildListRoleFromListDto(dto.getRoles()))
                      .build();
     }
 

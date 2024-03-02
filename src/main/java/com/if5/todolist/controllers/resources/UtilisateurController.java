@@ -8,7 +8,6 @@ import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 
 import com.if5.todolist.models.dtos.ApiResponse;
-import com.if5.todolist.models.dtos.projet.ProjetResponseDto;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -35,7 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.if5.todolist.controllers.helpers.ExcelHelper;
-import com.if5.todolist.controllers.utils.FileUploadUtil;
+import com.if5.todolist.utils.FileUploadUtil;
 import com.if5.todolist.exceptions.DuplicationEntityException;
 import com.if5.todolist.exceptions.EntityNotFoundException;
 import com.if5.todolist.exceptions.InvalidEntityException;
@@ -56,7 +55,7 @@ import com.if5.todolist.services.interfaces.UtilisateurServiceInter;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-import static com.if5.todolist.controllers.utils.StringsUtils.SUCESS_MESSAGE;
+import static com.if5.todolist.utils.StringsUtils.SUCESS_MESSAGE;
 
 @CrossOrigin("*")
 @RestController

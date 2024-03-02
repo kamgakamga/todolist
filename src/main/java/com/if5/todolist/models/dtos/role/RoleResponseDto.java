@@ -1,6 +1,7 @@
 package com.if5.todolist.models.dtos.role;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.if5.todolist.models.entities.Role;
@@ -31,20 +32,20 @@ public class RoleResponseDto {
     }
 
     public static Role buildRoleFromDto(RoleResponseDto dto){
-        return Role.builder()
+        return Role.RoleBuilder.aRole()
                       .id(dto.getId())
                       .nom(dto.getNom())
                       .build();
     }
 
 
-    public static List<RoleResponseDto> buildListDtoFromListRole(List<Role> listRole){
+    public static List<RoleResponseDto> buildListDtoFromListRole(Set<Role> listRole){
         return listRole.stream().map(RoleResponseDto::buildDtoFromRole).collect(Collectors.toList());
                      
     }
 
-    public static List<Role> buildListRoleFromListDto(List<RoleResponseDto> listRoleDto){
-        return listRoleDto.stream().map(RoleResponseDto::buildRoleFromDto).collect(Collectors.toList());
+    public static Set<Role> buildListRoleFromListDto(List<RoleResponseDto> listRoleDto){
+        return listRoleDto.stream().map(RoleResponseDto::buildRoleFromDto).collect(Collectors.toSet());
                      
     }
 }
