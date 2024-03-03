@@ -1,6 +1,5 @@
 package com.if5.todolist.services.interfaces.systeme;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.if5.todolist.models.entities.parametrages.VariableGlobale;
 import com.if5.todolist.services.interfaces.generics.CommonGenericCrudService;
 

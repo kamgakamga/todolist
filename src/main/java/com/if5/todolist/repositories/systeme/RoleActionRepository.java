@@ -1,6 +1,5 @@
 package com.if5.todolist.repositories.systeme;
 
-import com.if5.todolist.models.entities.systeme.ModuleSysteme;
 import com.if5.todolist.models.entities.systeme.RoleAction;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

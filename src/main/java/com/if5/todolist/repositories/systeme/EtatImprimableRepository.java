@@ -1,14 +1,11 @@
 package com.if5.todolist.repositories.systeme;
 
 import com.if5.todolist.models.dtos.responses.systeme.EtatActionDTO;
-import com.if5.todolist.models.entities.systeme.ActionSysteme;
 import com.if5.todolist.models.entities.systeme.EtatImprimable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
-import java.util.List;
 
 /**
  * Copyright (c) 2024, Iforce5, All Right Reserved.

@@ -1,5 +1,20 @@
 package com.if5.todolist.services.implementations;
 
+import com.if5.todolist.exceptions.EntityNotFoundException;
+import com.if5.todolist.exceptions.InvalidEntityException;
+import com.if5.todolist.models.dtos.tache.*;
+import com.if5.todolist.models.entities.*;
+import com.if5.todolist.models.enumerations.ResponseStatus;
+import com.if5.todolist.repositories.*;
+import com.if5.todolist.services.interfaces.TacheServiceInter;
+import com.maxmind.geoip2.DatabaseReader;
+import com.maxmind.geoip2.exception.GeoIp2Exception;
+import com.maxmind.geoip2.model.CityResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -10,40 +25,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import com.if5.todolist.exceptions.EntityNotFoundException;
-import com.if5.todolist.exceptions.InvalidEntityException;
-import com.if5.todolist.models.dtos.tache.AddTaskRequestDTO;
-import com.if5.todolist.models.dtos.tache.CalculNombreHeureResponseDto;
-import com.if5.todolist.models.dtos.tache.NombreRequestDto;
-import com.if5.todolist.models.dtos.tache.OrderResponseDto;
-import com.if5.todolist.models.dtos.tache.PeriodRequestDto;
-import com.if5.todolist.models.dtos.tache.StatistiqueResponseDto;
-import com.if5.todolist.models.dtos.tache.TacheRequestDto;
-import com.if5.todolist.models.dtos.tache.TacheResponseDto;
-import com.if5.todolist.models.dtos.utilisateur.UtilisateurRequestDto;
-import com.if5.todolist.models.dtos.utilisateur.UtilisateurResponseDto;
-import com.if5.todolist.models.entities.Attribution;
-import com.if5.todolist.models.entities.EtatTache;
-import com.if5.todolist.models.entities.Sprint;
-import com.if5.todolist.models.entities.Statistique;
-import com.if5.todolist.models.entities.Tache;
-import com.if5.todolist.models.entities.Utilisateur;
-import com.if5.todolist.models.enumerations.ResponseStatus;
-import com.if5.todolist.repositories.AttributionRepository;
-import com.if5.todolist.repositories.EtatTacheRepository;
-import com.if5.todolist.repositories.SprintRepository;
-import com.if5.todolist.repositories.TacheRepository;
-import com.if5.todolist.repositories.UtilisateurRepository;
-import com.if5.todolist.services.interfaces.TacheServiceInter;
-import com.maxmind.geoip2.DatabaseReader;
-import com.maxmind.geoip2.exception.GeoIp2Exception;
-import com.maxmind.geoip2.model.CityResponse;
 
 @Service
 @Transactional

@@ -1,6 +1,5 @@
 package com.if5.todolist.services.implementations.systeme;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.if5.todolist.exceptions.ResourceNotFoundException;
 import com.if5.todolist.models.entities.parametrages.VariableGlobale;
 import com.if5.todolist.repositories.parametre.VariableGlobaleRepository;
@@ -9,10 +8,8 @@ import com.if5.todolist.services.interfaces.systeme.VariableGlobaleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;

@@ -4,10 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.if5.todolist.models.entities.AuditModel;
 import com.if5.todolist.models.entities.Role;
 import lombok.*;
-import static com.if5.todolist.utils.StringsUtils.FALSE;
 
 import javax.persistence.*;
-import java.util.Objects;
+
+import static com.if5.todolist.utils.StringsUtils.FALSE;
 
 /**
  * Copyright (c) 2024, Iforce5, All Right Reserved.

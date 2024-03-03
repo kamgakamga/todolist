@@ -1,14 +1,5 @@
 package com.if5.todolist.services.implementations;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
-
 import com.if5.todolist.exceptions.EntityNotFoundException;
 import com.if5.todolist.exceptions.InvalidEntityException;
 import com.if5.todolist.models.dtos.sprint.SprintRequestDto;
@@ -23,6 +14,14 @@ import com.if5.todolist.repositories.ProjetRepository;
 import com.if5.todolist.repositories.SprintRepository;
 import com.if5.todolist.repositories.TacheRepository;
 import com.if5.todolist.services.interfaces.SprintServiceInter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class SprintServiceImp implements SprintServiceInter{

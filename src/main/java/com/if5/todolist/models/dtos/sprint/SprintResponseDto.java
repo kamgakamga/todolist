@@ -1,18 +1,13 @@
 package com.if5.todolist.models.dtos.sprint;
 
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import com.if5.todolist.models.dtos.etatTache.EtatTacheResponseDto;
 import com.if5.todolist.models.dtos.projet.ProjetResponseDto;
 import com.if5.todolist.models.entities.Sprint;
+import lombok.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter

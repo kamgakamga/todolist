@@ -1,26 +1,20 @@
 package com.if5.todolist.controllers.resources.systeme;
 
-import com.if5.todolist.exceptions.ResourceNotFoundException;
 import com.if5.todolist.models.dtos.ApiResponse;
 import com.if5.todolist.models.dtos.requests.systeme.ParamImpressionDTO;
 import com.if5.todolist.models.dtos.responses.systeme.EtatimprimableResponseDTO;
 import com.if5.todolist.models.dtos.responses.systeme.ListeFiltreEtatDTO;
 import com.if5.todolist.models.entities.parametrages.VariableGlobale;
 import com.if5.todolist.models.entities.systeme.Filtre;
-import com.if5.todolist.models.entities.systeme.FiltreEtatImprimable;
 import com.if5.todolist.models.entities.systeme.MessageSysteme;
 import com.if5.todolist.services.interfaces.systeme.*;
-import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import net.sf.jasperreports.engine.util.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
@@ -28,8 +22,8 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.sql.Connection;
-import java.util.*;
-import java.util.logging.Logger;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Copyright (c) 2024, Iforce5, All Right Reserved.

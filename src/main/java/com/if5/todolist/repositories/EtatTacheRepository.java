@@ -1,10 +1,9 @@
 package com.if5.todolist.repositories;
 
-import java.util.List;
-
+import com.if5.todolist.models.entities.EtatTache;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.if5.todolist.models.entities.EtatTache;
+import java.util.List;
 
 public interface EtatTacheRepository  extends JpaRepository<EtatTache, Long>{
 	

@@ -1,10 +1,7 @@
 package com.if5.todolist.repositories.systeme;
 
-import com.if5.todolist.models.entities.systeme.FiltreSysMessageDataSource;
 import com.if5.todolist.models.entities.systeme.FiltreTableau;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
 
 /**
  * Copyright (c) 2024, Iforce5, All Right Reserved.

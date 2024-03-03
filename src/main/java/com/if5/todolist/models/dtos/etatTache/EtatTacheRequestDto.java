@@ -1,12 +1,7 @@
 package com.if5.todolist.models.dtos.etatTache;
 
 import com.if5.todolist.models.entities.EtatTache;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Builder

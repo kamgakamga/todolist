@@ -1,21 +1,13 @@
 package com.if5.todolist.models.dtos.projet;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.if5.todolist.models.entities.EtatTache;
 import com.if5.todolist.models.entities.Projet;
 import com.if5.todolist.models.entities.Utilisateur;
+import lombok.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.hibernate.exception.DataException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor

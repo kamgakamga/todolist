@@ -1,21 +1,17 @@
 package com.if5.todolist.services.interfaces;
 
-import javax.mail.MessagingException;
-
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.List;
-
 import com.if5.todolist.exceptions.EntityNotFoundException;
 import com.if5.todolist.exceptions.InvalidEntityException;
 import com.if5.todolist.models.dtos.tache.OrderResponseDto;
 import com.if5.todolist.models.dtos.utilisateur.UtilisateurRequestDto;
 import com.if5.todolist.models.dtos.utilisateur.UtilisateurResponseDto;
 import com.if5.todolist.models.entities.Utilisateur;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.mail.MessagingException;
+import java.io.UnsupportedEncodingException;
 
 public interface UtilisateurServiceInter {
 

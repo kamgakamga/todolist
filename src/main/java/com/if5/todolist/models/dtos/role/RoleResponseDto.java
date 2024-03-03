@@ -1,16 +1,11 @@
 package com.if5.todolist.models.dtos.role;
 
+import com.if5.todolist.models.entities.Role;
+import lombok.*;
+
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import com.if5.todolist.models.entities.Role;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
 @Setter

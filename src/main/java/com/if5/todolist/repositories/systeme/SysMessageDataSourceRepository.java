@@ -1,11 +1,7 @@
 package com.if5.todolist.repositories.systeme;
 
-import com.if5.todolist.models.entities.systeme.RoleUtilisateur;
 import com.if5.todolist.models.entities.systeme.SysMessageDataSource;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-
-import java.util.List;
 
 /**
  * Copyright (c) 2024, Iforce5, All Right Reserved.

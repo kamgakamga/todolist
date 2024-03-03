@@ -2,12 +2,9 @@ package com.if5.todolist.models.entities.systeme;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.if5.todolist.models.entities.AuditModel;
-import com.if5.todolist.models.entities.Role;
-import com.if5.todolist.models.entities.Utilisateur;
 import lombok.*;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 /**
  * Copyright (c) 2024, Iforce5, All Right Reserved.

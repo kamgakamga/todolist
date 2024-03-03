@@ -1,9 +1,7 @@
 package com.if5.todolist.repositories.systeme;
 
-import com.if5.todolist.models.entities.systeme.Filtre;
 import com.if5.todolist.models.entities.systeme.FiltreSysMessageDataSource;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 

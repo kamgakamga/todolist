@@ -1,15 +1,13 @@
 package com.if5.todolist.controllers.resources;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
 import com.if5.todolist.exceptions.DuplicationEntityException;
 import com.if5.todolist.models.dtos.etatTache.EtatTacheRequestDto;
 import com.if5.todolist.models.dtos.etatTache.EtatTacheResponseDto;
 import com.if5.todolist.services.interfaces.EtatTacheServiceInter;
-
 import io.swagger.annotations.Api;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 

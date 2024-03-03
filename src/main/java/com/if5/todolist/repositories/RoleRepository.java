@@ -1,11 +1,10 @@
 package com.if5.todolist.repositories;
 
-import java.util.List;
-import java.util.Optional;
-
+import com.if5.todolist.models.entities.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.if5.todolist.models.entities.Role;
+import java.util.List;
+import java.util.Optional;
 
 public interface RoleRepository extends JpaRepository<Role,Long>{
 

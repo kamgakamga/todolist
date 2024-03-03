@@ -1,7 +1,6 @@
 package com.if5.todolist.repositories.systeme;
 
 import com.if5.todolist.models.entities.systeme.FiltreEtatImprimable;
-import com.if5.todolist.models.entities.systeme.FiltreSysMessageDataSource;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

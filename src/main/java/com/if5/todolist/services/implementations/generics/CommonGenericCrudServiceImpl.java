@@ -2,7 +2,6 @@ package com.if5.todolist.services.implementations.generics;
 
 import com.if5.todolist.models.entities.AuditModel;
 import com.if5.todolist.services.interfaces.generics.CommonGenericCrudService;
-import com.if5.todolist.services.interfaces.generics.GenericCrudService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

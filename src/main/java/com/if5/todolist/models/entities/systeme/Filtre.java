@@ -1,13 +1,9 @@
 package com.if5.todolist.models.entities.systeme;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.if5.todolist.models.entities.AuditModel;
 import lombok.*;
-import org.hibernate.Hibernate;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.Objects;
 
 /**
  * Copyright (c) 2024, Iforce5, All Right Reserved.

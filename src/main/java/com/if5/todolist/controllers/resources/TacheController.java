@@ -1,37 +1,8 @@
 package com.if5.todolist.controllers.resources;
 
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-
-import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.if5.todolist.exceptions.EntityNotFoundException;
 import com.if5.todolist.exceptions.InvalidEntityException;
-import com.if5.todolist.models.dtos.tache.AddTaskRequestDTO;
-import com.if5.todolist.models.dtos.tache.CalculNombreHeureResponseDto;
-import com.if5.todolist.models.dtos.tache.NombreRequestDto;
-import com.if5.todolist.models.dtos.tache.OrderResponseDto;
-import com.if5.todolist.models.dtos.tache.PeriodRequestDto;
-import com.if5.todolist.models.dtos.tache.StatistiqueResponseDto;
-import com.if5.todolist.models.dtos.tache.TacheRequestDto;
-import com.if5.todolist.models.dtos.tache.TacheResponseDto;
+import com.if5.todolist.models.dtos.tache.*;
 import com.if5.todolist.models.entities.Tache;
 import com.if5.todolist.repositories.TacheRepository;
 import com.if5.todolist.services.implementations.TacheExcelExporter;
@@ -39,11 +10,22 @@ import com.if5.todolist.services.implementations.TachePDFExporter;
 import com.if5.todolist.services.interfaces.TacheServiceInter;
 import com.lowagie.text.DocumentException;
 import com.maxmind.geoip2.exception.GeoIp2Exception;
-
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping("/toDoList/v1")

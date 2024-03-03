@@ -1,12 +1,11 @@
 package com.if5.todolist.repositories;
 
-import java.util.List;
-
+import com.if5.todolist.models.entities.Sprint;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.if5.todolist.models.entities.Sprint;
+import java.util.List;
 
 @Transactional
 @Repository

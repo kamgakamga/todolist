@@ -1,14 +1,13 @@
 package com.if5.todolist.repositories;
 
-import java.util.List;
-
+import com.if5.todolist.models.entities.Attribution;
+import com.if5.todolist.models.entities.Tache;
+import com.if5.todolist.models.entities.Utilisateur;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.if5.todolist.models.entities.Attribution;
-import com.if5.todolist.models.entities.Tache;
-import com.if5.todolist.models.entities.Utilisateur;
+import java.util.List;
 
 @Repository
 public interface AttributionRepository extends JpaRepository<Attribution, Long>{

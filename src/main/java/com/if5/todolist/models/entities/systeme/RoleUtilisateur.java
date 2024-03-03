@@ -1,6 +1,5 @@
 package com.if5.todolist.models.entities.systeme;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.if5.todolist.models.entities.AuditModel;
 import com.if5.todolist.models.entities.Role;
 import com.if5.todolist.models.entities.Utilisateur;

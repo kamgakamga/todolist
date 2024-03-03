@@ -1,12 +1,7 @@
 package com.if5.todolist.models.dtos.tache;
 
 import com.if5.todolist.models.enumerations.ResponseStatus;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor

@@ -1,15 +1,14 @@
 package com.if5.todolist.services.interfaces;
 
-import java.util.List;
-
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.if5.todolist.exceptions.EntityNotFoundException;
 import com.if5.todolist.exceptions.InvalidEntityException;
 import com.if5.todolist.models.dtos.sprint.SprintRequestDto;
 import com.if5.todolist.models.dtos.sprint.SprintResponseDto;
 import com.if5.todolist.models.dtos.sprint.SprintStatistiqueDto;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Transactional

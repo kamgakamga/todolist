@@ -1,11 +1,9 @@
 package com.if5.todolist.repositories.systeme;
 
-import com.if5.todolist.models.entities.systeme.MessageSysteme;
 import com.if5.todolist.models.entities.systeme.ModeleImpression;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Copyright (c) 2024, Iforce5, All Right Reserved.

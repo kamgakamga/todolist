@@ -1,23 +1,17 @@
 package com.if5.todolist.models.dtos.utilisateur;
 
+import com.if5.todolist.models.entities.Attribution;
+import com.if5.todolist.models.entities.Role;
+import com.if5.todolist.models.entities.Utilisateur;
+import lombok.*;
+
+import javax.persistence.Column;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import javax.persistence.Column;
-import javax.validation.constraints.NotNull;
-
-import com.if5.todolist.models.entities.Attribution;
-import com.if5.todolist.models.entities.Role;
-import com.if5.todolist.models.entities.Utilisateur;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
 @Setter

@@ -1,8 +1,9 @@
 package com.if5.todolist.services.implementations;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
+import com.if5.todolist.models.entities.Utilisateur;
+import com.if5.todolist.repositories.UtilisateurRepository;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -11,11 +12,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
-import com.if5.todolist.models.entities.Utilisateur;
-import com.if5.todolist.repositories.UtilisateurRepository;
-
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Service
 @AllArgsConstructor

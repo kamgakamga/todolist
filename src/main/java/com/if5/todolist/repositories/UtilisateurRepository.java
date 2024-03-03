@@ -1,16 +1,13 @@
 package com.if5.todolist.repositories;
 
-import java.util.List;
-
-import com.if5.todolist.models.entities.Projet;
+import com.if5.todolist.models.entities.Utilisateur;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.if5.todolist.models.entities.Utilisateur;
+import java.util.List;
 
 @Repository
 public interface UtilisateurRepository extends JpaRepository<Utilisateur,Long> {

@@ -1,23 +1,18 @@
 package com.if5.todolist;
 
-import java.util.Arrays;
-import java.util.Base64;
-import java.util.List;
-
-import javax.servlet.http.Cookie;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.session.RedisSessionProperties.ConfigureAction;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import org.springframework.util.SerializationUtils;
-
 import com.if5.todolist.models.entities.EtatTache;
 import com.if5.todolist.models.enumerations.Sexe;
 import com.if5.todolist.repositories.EtatTacheRepository;
 import com.if5.todolist.services.interfaces.EtatTacheServiceInter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+
+import java.util.Arrays;
+import java.util.Base64;
+import java.util.List;
 
 @SpringBootApplication
 @EnableJpaAuditing

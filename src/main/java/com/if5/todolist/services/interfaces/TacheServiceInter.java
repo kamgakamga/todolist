@@ -1,19 +1,13 @@
 package com.if5.todolist.services.interfaces;
 
-import java.io.IOException;
-import java.util.List;
 import com.if5.todolist.exceptions.EntityNotFoundException;
 import com.if5.todolist.exceptions.InvalidEntityException;
-import com.if5.todolist.models.dtos.tache.TacheRequestDto;
-import com.if5.todolist.models.dtos.tache.TacheResponseDto;
+import com.if5.todolist.models.dtos.tache.*;
 import com.if5.todolist.models.entities.Tache;
-import com.if5.todolist.models.dtos.tache.AddTaskRequestDTO;
-import com.if5.todolist.models.dtos.tache.CalculNombreHeureResponseDto;
-import com.if5.todolist.models.dtos.tache.NombreRequestDto;
-import com.if5.todolist.models.dtos.tache.OrderResponseDto;
-import com.if5.todolist.models.dtos.tache.PeriodRequestDto;
-import com.if5.todolist.models.dtos.tache.StatistiqueResponseDto;
 import com.maxmind.geoip2.exception.GeoIp2Exception;
+
+import java.io.IOException;
+import java.util.List;
 
 public interface TacheServiceInter {
     

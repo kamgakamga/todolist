@@ -1,18 +1,13 @@
 package com.if5.todolist.services.interfaces;
 
-import java.util.List;
-
+import com.if5.todolist.exceptions.DuplicationEntityException;
+import com.if5.todolist.exceptions.EntityNotFoundException;
+import com.if5.todolist.models.dtos.projet.ProjetRequestDto;
+import com.if5.todolist.models.dtos.projet.ProjetResponseDto;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.if5.todolist.exceptions.DuplicationEntityException;
-import com.if5.todolist.exceptions.EntityNotFoundException;
-import com.if5.todolist.exceptions.InvalidEntityException;
-import com.if5.todolist.models.dtos.projet.ProjetRequestDto;
-import com.if5.todolist.models.dtos.projet.ProjetResponseDto;
 
 @Transactional
 @Service

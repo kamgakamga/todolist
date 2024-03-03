@@ -1,16 +1,15 @@
 package com.if5.todolist.services.implementations;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.if5.todolist.exceptions.DuplicationEntityException;
 import com.if5.todolist.models.dtos.etatTache.EtatTacheRequestDto;
 import com.if5.todolist.models.dtos.etatTache.EtatTacheResponseDto;
 import com.if5.todolist.models.entities.EtatTache;
 import com.if5.todolist.repositories.EtatTacheRepository;
 import com.if5.todolist.services.interfaces.EtatTacheServiceInter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class EtatTacheServiceImp implements EtatTacheServiceInter {

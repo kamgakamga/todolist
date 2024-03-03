@@ -1,23 +1,17 @@
 package com.if5.todolist.models.dtos.utilisateur;
 
+import com.if5.todolist.models.dtos.role.RoleResponseDto;
+import com.if5.todolist.models.entities.Utilisateur;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.data.domain.Page;
+
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
-
-import com.if5.todolist.models.dtos.projet.ProjetResponseDto;
-import com.if5.todolist.models.dtos.role.RoleResponseDto;
-import com.if5.todolist.models.entities.Projet;
-import com.if5.todolist.models.entities.Utilisateur;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.data.domain.Page;
 
 @Getter
 @Setter

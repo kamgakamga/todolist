@@ -18,7 +18,6 @@ import com.if5.todolist.services.implementations.generics.CommonGenericCrudServi
 import com.if5.todolist.services.interfaces.systeme.EtatImprimableService;
 import com.if5.todolist.utils.GeneralUtils;
 import net.sf.jasperreports.engine.JRException;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

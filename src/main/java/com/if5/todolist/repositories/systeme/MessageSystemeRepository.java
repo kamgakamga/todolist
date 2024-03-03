@@ -1,6 +1,5 @@
 package com.if5.todolist.repositories.systeme;
 
-import com.if5.todolist.models.entities.systeme.FiltreTableau;
 import com.if5.todolist.models.entities.systeme.MessageSysteme;
 import org.springframework.data.jpa.repository.JpaRepository;
 
