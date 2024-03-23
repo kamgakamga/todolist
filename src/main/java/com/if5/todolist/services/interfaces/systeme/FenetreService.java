@@ -1,7 +1,7 @@
 package com.if5.todolist.services.interfaces.systeme;
 
-import com.if5.todolist.models.dtos.responses.systeme.FenetreDTO;
-import com.if5.todolist.models.dtos.responses.systeme.ModuleFenetresDTO;
+import com.if5.todolist.dtos.responses.systeme.FenetreDTO;
+import com.if5.todolist.dtos.responses.systeme.ModuleFenetresDTO;
 import com.if5.todolist.models.entities.systeme.Fenetre;
 import com.if5.todolist.services.interfaces.generics.CommonGenericCrudService;
 

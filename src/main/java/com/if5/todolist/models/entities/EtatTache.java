@@ -22,8 +22,9 @@ public class EtatTache extends AuditModel  {
 	
 	@Column(unique = true)
 	private String libelle;
+
+	private String description ;
 	
 	private boolean defaultValue;
-	
 
 }

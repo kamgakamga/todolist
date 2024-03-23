@@ -1,9 +1,9 @@
 package com.if5.todolist.exceptions.handlers;
 
+import com.if5.todolist.dtos.responses.ApiResponseMessage;
 import com.if5.todolist.exceptions.DuplicationEntityException;
 import com.if5.todolist.exceptions.EntityNotFoundException;
 import com.if5.todolist.exceptions.InvalidEntityException;
-import com.if5.todolist.models.dtos.role.ApiResponseMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;

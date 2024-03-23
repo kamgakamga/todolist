@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -224,13 +225,27 @@ public class GeneralUtils {
     /**
      * @implSpec construit une Map dans laquelle se trouve les elements d'en tete pour les etats imprimables
      */
-    public static Map<String, Object> getInstituteHeader() {
-       return null;
+    public static Map<String, Object> buildEtatParams() {
+       return new HashMap<>();
     }
 
+    public static String replaceSpacesWithUnderscores(String input) {
+        // Vérifier si l'entrée est nulle ou vide
+        if (input == null || input.isEmpty()) {
+            return input;
+        }
+
+        // Remplacer les espaces par des underscores
+        return input.replaceAll(" ", "_");
+    }
 
     public static void initHeaderDocumentXLS(HttpServletResponse response, String contentDisposition) {
         response.setContentType("application/vnd.ms-excel");
         response.setHeader("Content-disposition", contentDisposition);
+    }
+
+
+    public static String buildKeyword(String key){
+        return "%"+key+"%";
     }
 }

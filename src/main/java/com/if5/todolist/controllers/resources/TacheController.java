@@ -1,8 +1,15 @@
 package com.if5.todolist.controllers.resources;
 
+import com.if5.todolist.dtos.requets.application.tache.AddTaskRequestDTO;
+import com.if5.todolist.dtos.requets.application.tache.NombreRequestDto;
+import com.if5.todolist.dtos.requets.application.tache.PeriodRequestDto;
+import com.if5.todolist.dtos.requets.application.tache.TacheRequestDto;
+import com.if5.todolist.dtos.responses.application.tache.CalculNombreHeureResponseDto;
+import com.if5.todolist.dtos.responses.application.tache.OrderResponseDto;
+import com.if5.todolist.dtos.responses.application.tache.StatistiqueResponseDto;
+import com.if5.todolist.dtos.responses.application.tache.TacheResponseDto;
 import com.if5.todolist.exceptions.EntityNotFoundException;
 import com.if5.todolist.exceptions.InvalidEntityException;
-import com.if5.todolist.models.dtos.tache.*;
 import com.if5.todolist.models.entities.Tache;
 import com.if5.todolist.repositories.TacheRepository;
 import com.if5.todolist.services.implementations.TacheExcelExporter;
@@ -52,7 +59,7 @@ public class TacheController {
 			@ApiResponse(code = 404, message = "La tâche fournie n'est pas  valide")
 	})
 	@PostMapping("/save-tache")
-	public ResponseEntity<TacheResponseDto> saveTache(@RequestBody TacheRequestDto  tacheRequestDto) throws EntityNotFoundException{
+	public ResponseEntity<TacheResponseDto> saveTache(@RequestBody TacheRequestDto tacheRequestDto) throws EntityNotFoundException{
 
 		return new  ResponseEntity<TacheResponseDto>( tacheServiceInter.saveTask(tacheRequestDto), HttpStatus.CREATED);
 	}
@@ -105,7 +112,7 @@ public class TacheController {
 	
 
 	@GetMapping("/tache/utilisateur")
-	public ResponseEntity<List<TacheResponseDto>> tachePourTravailleur(@RequestBody  NombreRequestDto nombreRequestDto){
+	public ResponseEntity<List<TacheResponseDto>> tachePourTravailleur(@RequestBody NombreRequestDto nombreRequestDto){
 		List<TacheResponseDto> nh = tacheServiceInter.tachePourTravailleur(nombreRequestDto) ;
 		return ResponseEntity.ok(nh);
 

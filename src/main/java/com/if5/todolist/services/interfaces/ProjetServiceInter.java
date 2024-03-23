@@ -1,9 +1,9 @@
 package com.if5.todolist.services.interfaces;
 
+import com.if5.todolist.dtos.requets.application.projet.ProjetRequestDto;
+import com.if5.todolist.dtos.responses.application.projet.ProjetResponseDto;
 import com.if5.todolist.exceptions.DuplicationEntityException;
 import com.if5.todolist.exceptions.EntityNotFoundException;
-import com.if5.todolist.models.dtos.projet.ProjetRequestDto;
-import com.if5.todolist.models.dtos.projet.ProjetResponseDto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

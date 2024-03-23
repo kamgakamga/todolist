@@ -1,6 +1,6 @@
 package com.if5.todolist.repositories.systeme;
 
-import com.if5.todolist.models.dtos.responses.systeme.EtatActionDTO;
+import com.if5.todolist.dtos.responses.systeme.EtatActionDTO;
 import com.if5.todolist.models.entities.systeme.EtatImprimable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -27,7 +27,7 @@ public interface EtatImprimableRepository extends JpaRepository<EtatImprimable, 
 /*    @Query("select new com.if5.todolist.models.dtos.responses.systeme.output.EtatActionDTO(e.id, e.type, e.libelle,e.libelle_en, e.description, e.description_en, e.groupe, e.chemin, e.exportable, e.fenetre, a) " +
             "from EtatImprimable e left join ActionSysteme a on (e.fenetre = a.fenetre and a.typeObjet=5 and TRIM(concat(e.id, '')) = a.idObjet ) order by e.groupe, e.libelle")
     Page<EtatActionDTO> findByAllEtatAction(Pageable pageable);*/
-@Query("select new com.if5.todolist.models.dtos.responses.systeme.EtatActionDTO(e.id, e.type, e.libelle,e.libelle_en, e.description, e.description_en, e.groupe, e.chemin, e.exportable, e.fenetre, a) " +
+@Query("select new com.if5.todolist.dtos.responses.systeme.EtatActionDTO(e.id, e.type, e.libelle,e.libelle_en, e.description, e.description_en, e.groupe, e.chemin, e.exportable, e.fenetre, a) " +
             "from EtatImprimable e left join ActionSysteme a on (e.fenetre = a.fenetre and a.typeObjet=5 and TRIM(concat(e.id, '')) = a.idObjet ) order by e.groupe, e.libelle")
     Page<EtatActionDTO> findByAllEtatAction(Pageable pageable);
 }

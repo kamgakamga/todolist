@@ -1,6 +1,7 @@
 package com.if5.todolist.models.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.if5.todolist.models.entities.applications.Commentaire;
 import lombok.*;
 
 import javax.persistence.*;
@@ -24,6 +25,8 @@ public class Projet extends AuditModel {
 	
 	private String description;
 
+	private boolean estDemarrer;
+
 	@JsonFormat(pattern = "yyyy-MM-dd" , shape = JsonFormat.Shape.STRING)
 	private Date dateDebut;
 
@@ -41,6 +44,9 @@ public class Projet extends AuditModel {
 	
 	@ManyToMany(fetch = FetchType.LAZY)
 	private List<EtatTache> etatTaches;
+
+	@OneToMany(mappedBy = "projet", fetch = FetchType.LAZY)
+	private List<Commentaire> commentaires;
 
 
 }

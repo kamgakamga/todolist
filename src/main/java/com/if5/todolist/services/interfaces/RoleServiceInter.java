@@ -1,8 +1,8 @@
 package com.if5.todolist.services.interfaces;
 
+import com.if5.todolist.dtos.requets.RoleRequestDto;
+import com.if5.todolist.dtos.responses.RoleResponseDto;
 import com.if5.todolist.exceptions.DuplicationEntityException;
-import com.if5.todolist.models.dtos.role.RoleRequestDto;
-import com.if5.todolist.models.dtos.role.RoleResponseDto;
 
 import java.util.List;
 

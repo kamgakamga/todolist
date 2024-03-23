@@ -1,16 +1,16 @@
 package com.if5.todolist.controllers.resources;
 
-import com.if5.todolist.controllers.helpers.ExcelHelper;
+import com.if5.todolist.dtos.requets.RoleRequestDto;
+import com.if5.todolist.dtos.requets.UtilisateurRequestDto;
+import com.if5.todolist.dtos.responses.ApiResponse;
+import com.if5.todolist.dtos.responses.ApiResponseMessage;
+import com.if5.todolist.dtos.responses.RoleResponseDto;
+import com.if5.todolist.dtos.responses.UtilisateurResponseDto;
+import com.if5.todolist.dtos.responses.application.tache.OrderResponseDto;
 import com.if5.todolist.exceptions.DuplicationEntityException;
 import com.if5.todolist.exceptions.EntityNotFoundException;
 import com.if5.todolist.exceptions.InvalidEntityException;
-import com.if5.todolist.models.dtos.ApiResponse;
-import com.if5.todolist.models.dtos.role.ApiResponseMessage;
-import com.if5.todolist.models.dtos.role.RoleRequestDto;
-import com.if5.todolist.models.dtos.role.RoleResponseDto;
-import com.if5.todolist.models.dtos.tache.OrderResponseDto;
-import com.if5.todolist.models.dtos.utilisateur.UtilisateurRequestDto;
-import com.if5.todolist.models.dtos.utilisateur.UtilisateurResponseDto;
+import com.if5.todolist.helpers.ExcelHelper;
 import com.if5.todolist.models.entities.FileUploadResponse;
 import com.if5.todolist.models.entities.Role;
 import com.if5.todolist.models.entities.Utilisateur;

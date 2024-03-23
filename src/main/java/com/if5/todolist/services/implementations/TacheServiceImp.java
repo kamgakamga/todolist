@@ -1,8 +1,15 @@
 package com.if5.todolist.services.implementations;
 
+import com.if5.todolist.dtos.requets.application.tache.AddTaskRequestDTO;
+import com.if5.todolist.dtos.requets.application.tache.NombreRequestDto;
+import com.if5.todolist.dtos.requets.application.tache.PeriodRequestDto;
+import com.if5.todolist.dtos.requets.application.tache.TacheRequestDto;
+import com.if5.todolist.dtos.responses.application.tache.CalculNombreHeureResponseDto;
+import com.if5.todolist.dtos.responses.application.tache.OrderResponseDto;
+import com.if5.todolist.dtos.responses.application.tache.StatistiqueResponseDto;
+import com.if5.todolist.dtos.responses.application.tache.TacheResponseDto;
 import com.if5.todolist.exceptions.EntityNotFoundException;
 import com.if5.todolist.exceptions.InvalidEntityException;
-import com.if5.todolist.models.dtos.tache.*;
 import com.if5.todolist.models.entities.*;
 import com.if5.todolist.models.enumerations.ResponseStatus;
 import com.if5.todolist.repositories.*;

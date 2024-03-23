@@ -1,7 +1,7 @@
 package com.if5.todolist.controllers.resources.auth;
 
-import com.if5.todolist.models.dtos.auth.AuthenticationRequest;
-import com.if5.todolist.models.dtos.auth.AuthenticationResponse;
+import com.if5.todolist.dtos.requets.AuthenticationRequest;
+import com.if5.todolist.dtos.responses.AuthenticationResponse;
 import com.if5.todolist.services.implementations.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

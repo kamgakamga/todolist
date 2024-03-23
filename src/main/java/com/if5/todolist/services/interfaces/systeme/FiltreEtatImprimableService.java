@@ -1,7 +1,7 @@
 package com.if5.todolist.services.interfaces.systeme;
 
-import com.if5.todolist.models.dtos.requests.systeme.AddFiltresEtatDTO;
-import com.if5.todolist.models.dtos.responses.systeme.ListeFiltreEtatDTO;
+import com.if5.todolist.dtos.requets.systeme.AddFiltresEtatDTO;
+import com.if5.todolist.dtos.responses.systeme.ListeFiltreEtatDTO;
 import com.if5.todolist.models.entities.systeme.FiltreEtatImprimable;
 import com.if5.todolist.services.interfaces.generics.CommonGenericCrudService;
 

@@ -1,9 +1,9 @@
 package com.if5.todolist.controllers.resources.systeme;
 
-import com.if5.todolist.models.dtos.ApiResponse;
-import com.if5.todolist.models.dtos.requests.systeme.ParamImpressionDTO;
-import com.if5.todolist.models.dtos.responses.systeme.EtatimprimableResponseDTO;
-import com.if5.todolist.models.dtos.responses.systeme.ListeFiltreEtatDTO;
+import com.if5.todolist.dtos.requets.systeme.ParamImpressionDTO;
+import com.if5.todolist.dtos.responses.ApiResponse;
+import com.if5.todolist.dtos.responses.systeme.EtatimprimableResponseDTO;
+import com.if5.todolist.dtos.responses.systeme.ListeFiltreEtatDTO;
 import com.if5.todolist.models.entities.parametrages.VariableGlobale;
 import com.if5.todolist.models.entities.systeme.Filtre;
 import com.if5.todolist.models.entities.systeme.MessageSysteme;

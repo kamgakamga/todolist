@@ -1,8 +1,8 @@
 package com.if5.todolist.services.implementations.systeme;
 
+import com.if5.todolist.dtos.responses.systeme.FenetreDTO;
+import com.if5.todolist.dtos.responses.systeme.ModuleFenetresDTO;
 import com.if5.todolist.exceptions.ResourceNotFoundException;
-import com.if5.todolist.models.dtos.responses.systeme.FenetreDTO;
-import com.if5.todolist.models.dtos.responses.systeme.ModuleFenetresDTO;
 import com.if5.todolist.models.entities.systeme.Fenetre;
 import com.if5.todolist.models.entities.systeme.ModuleSysteme;
 import com.if5.todolist.repositories.systeme.FenetreRepository;

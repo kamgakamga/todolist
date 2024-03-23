@@ -1,8 +1,8 @@
 package com.if5.todolist.services.implementations.systeme;
 
+import com.if5.todolist.dtos.requets.systeme.AddFiltresEtatDTO;
+import com.if5.todolist.dtos.responses.systeme.ListeFiltreEtatDTO;
 import com.if5.todolist.exceptions.ResourceNotFoundException;
-import com.if5.todolist.models.dtos.requests.systeme.AddFiltresEtatDTO;
-import com.if5.todolist.models.dtos.responses.systeme.ListeFiltreEtatDTO;
 import com.if5.todolist.models.entities.systeme.EtatImprimable;
 import com.if5.todolist.models.entities.systeme.Filtre;
 import com.if5.todolist.models.entities.systeme.FiltreEtatImprimable;

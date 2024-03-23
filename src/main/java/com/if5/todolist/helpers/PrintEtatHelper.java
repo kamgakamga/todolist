@@ -1,7 +1,7 @@
 package com.if5.todolist.helpers;
 
-import com.if5.todolist.models.dtos.requests.systeme.ParamEtatDTO;
-import com.if5.todolist.models.dtos.requests.systeme.ParamImpressionDTO;
+import com.if5.todolist.dtos.requets.systeme.ParamEtatDTO;
+import com.if5.todolist.dtos.requets.systeme.ParamImpressionDTO;
 import com.if5.todolist.models.entities.systeme.EtatImprimable;
 import com.if5.todolist.utils.GeneralUtils;
 import lombok.AllArgsConstructor;
@@ -21,13 +21,13 @@ import java.io.OutputStream;
 import java.sql.Connection;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-import static com.if5.todolist.utils.GeneralUtils.*;
+import static com.if5.todolist.utils.GeneralUtils.LOGO_PAR_DEFAUT;
+import static com.if5.todolist.utils.GeneralUtils.REPORTS_DIR_PATH;
 import static com.if5.todolist.utils.StringsUtils.*;
 
 /**
@@ -59,23 +59,22 @@ public class PrintEtatHelper {
      * @throws JRException si le template n'a pas pu etre correctement rempli
      * @apiNote Constitue le rapport d'un etat
      */
-    public static void imprimerEtatImprimable(EtatImprimable stored, ParamImpressionDTO paramImpression, Map<String, Object> instituteHeader,
+    public static void imprimerEtatImprimable(EtatImprimable stored, ParamImpressionDTO paramImpression, Map<String, Object> params,
                                               Connection conn, HttpServletResponse response)
             throws IOException, JRException {
         log.info(stored.getChemin());
         String path = REPORTS_DIR_PATH + stored.getChemin();
         log.info(path);
-        instituteHeader.put(SUBREPORT_DIR, REPORTS_DIR_PATH);
-        instituteHeader.put(FILIGRANE_PAR_DEFAUT, FILLIGRANE_PAR_DEFAUT);
+        params.put(SUBREPORT_DIR, REPORTS_DIR_PATH);
+      //  params.put(FILIGRANE_PAR_DEFAUT, FILLIGRANE_PAR_DEFAUT);
         FileSystemResource fsr = new FileSystemResource(path);
         InputStream jasperStream = fsr.getInputStream();
-        String filename = "ETAT_" + stored.getLibelle() + "_" + LocalDateTime.now();
-        Map<String, Object> params = new HashMap<>();
+        String filename = "ETAT_" +GeneralUtils.replaceSpaceByUndescore(stored.getLibelle())+ "_" + LocalDateTime.now();
         // on elimine les cles n'ayant pas de valeur
         List<ParamEtatDTO> nonNulParams = paramImpression.getParamEtats().stream().filter(paramEtatDTO -> Objects.nonNull(paramEtatDTO.getValeur())).collect(Collectors.toList());
         nonNulParams.forEach(param -> params.put(param.getTexte(), param.getValeur()));
         // Ajout de l'en-tete si xa n'existe pas encore
-        instituteHeader.forEach(params::putIfAbsent);
+        params.forEach(params::putIfAbsent);
         JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperStream);
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, conn);
 

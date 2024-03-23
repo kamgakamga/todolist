@@ -3,7 +3,7 @@ package com.if5.todolist.utils;
 public class StringsUtils {
 
 
-    public static  String SUCESS_MESSAGE = "Opération éffectué avec succes";
+    public static final String SUCESS_MESSAGE = "Opération éffectué avec succes";
     public static final String FALSE = "false";
     public static final String IMAGE_FOND = "IMAGE_FOND";
     public static final String SUBREPORT_DIR = "SUBREPORT_DIR";

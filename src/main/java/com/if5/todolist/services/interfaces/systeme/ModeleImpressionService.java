@@ -1,6 +1,6 @@
 package com.if5.todolist.services.interfaces.systeme;
 
-import com.if5.todolist.models.dtos.responses.systeme.ShortModeleImpressionDTO;
+import com.if5.todolist.dtos.responses.systeme.ShortModeleImpressionDTO;
 import com.if5.todolist.models.entities.systeme.ModeleImpression;
 import com.if5.todolist.services.interfaces.generics.CommonGenericCrudService;
 

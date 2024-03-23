@@ -1,9 +1,9 @@
 package com.if5.todolist.services.interfaces.systeme;
 
-import com.if5.todolist.models.dtos.requests.systeme.AddEtatImprimableParamDTO;
-import com.if5.todolist.models.dtos.requests.systeme.ParamImpressionDTO;
-import com.if5.todolist.models.dtos.requests.systeme.UpdateEtatImprimableParamDTO;
-import com.if5.todolist.models.dtos.responses.systeme.EtatActionDTO;
+import com.if5.todolist.dtos.requets.systeme.AddEtatImprimableParamDTO;
+import com.if5.todolist.dtos.requets.systeme.ParamImpressionDTO;
+import com.if5.todolist.dtos.requets.systeme.UpdateEtatImprimableParamDTO;
+import com.if5.todolist.dtos.responses.systeme.EtatActionDTO;
 import com.if5.todolist.models.entities.systeme.EtatImprimable;
 import com.if5.todolist.services.interfaces.generics.CommonGenericCrudService;
 import net.sf.jasperreports.engine.JRException;

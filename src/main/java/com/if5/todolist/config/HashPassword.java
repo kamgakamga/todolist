@@ -11,5 +11,4 @@ public class HashPassword {
 	public BCryptPasswordEncoder getBCP(){
 	return new BCryptPasswordEncoder();
 	  }
-
 }

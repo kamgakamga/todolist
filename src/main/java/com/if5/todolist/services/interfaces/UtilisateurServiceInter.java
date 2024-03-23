@@ -1,10 +1,10 @@
 package com.if5.todolist.services.interfaces;
 
+import com.if5.todolist.dtos.requets.UtilisateurRequestDto;
+import com.if5.todolist.dtos.responses.UtilisateurResponseDto;
+import com.if5.todolist.dtos.responses.application.tache.OrderResponseDto;
 import com.if5.todolist.exceptions.EntityNotFoundException;
 import com.if5.todolist.exceptions.InvalidEntityException;
-import com.if5.todolist.models.dtos.tache.OrderResponseDto;
-import com.if5.todolist.models.dtos.utilisateur.UtilisateurRequestDto;
-import com.if5.todolist.models.dtos.utilisateur.UtilisateurResponseDto;
 import com.if5.todolist.models.entities.Utilisateur;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

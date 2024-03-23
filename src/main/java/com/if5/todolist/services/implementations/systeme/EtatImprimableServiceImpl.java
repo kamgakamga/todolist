@@ -1,12 +1,12 @@
 package com.if5.todolist.services.implementations.systeme;
 
+import com.if5.todolist.dtos.requets.systeme.AddEtatImprimableParamDTO;
+import com.if5.todolist.dtos.requets.systeme.EtatImprimableParamDTO;
+import com.if5.todolist.dtos.requets.systeme.ParamImpressionDTO;
+import com.if5.todolist.dtos.requets.systeme.UpdateEtatImprimableParamDTO;
+import com.if5.todolist.dtos.responses.systeme.EtatActionDTO;
 import com.if5.todolist.exceptions.ResourceNotFoundException;
 import com.if5.todolist.helpers.PrintEtatHelper;
-import com.if5.todolist.models.dtos.requests.systeme.AddEtatImprimableParamDTO;
-import com.if5.todolist.models.dtos.requests.systeme.EtatImprimableParamDTO;
-import com.if5.todolist.models.dtos.requests.systeme.ParamImpressionDTO;
-import com.if5.todolist.models.dtos.requests.systeme.UpdateEtatImprimableParamDTO;
-import com.if5.todolist.models.dtos.responses.systeme.EtatActionDTO;
 import com.if5.todolist.models.entities.Role;
 import com.if5.todolist.models.entities.systeme.ActionSysteme;
 import com.if5.todolist.models.entities.systeme.EtatImprimable;
@@ -155,7 +155,7 @@ public class EtatImprimableServiceImpl  extends CommonGenericCrudServiceImpl<Eta
     public void imprimerEtat(ParamImpressionDTO paramImpression, Connection connection, HttpServletResponse response) throws JRException, IOException {
         EtatImprimable stored = repository.findById(paramImpression.getIdEtat())
                 .orElseThrow(() -> new ResourceNotFoundException(ETAT_IMPRIMABLE, ID, paramImpression.getIdEtat()));
-        PrintEtatHelper.imprimerEtatImprimable(stored, paramImpression, GeneralUtils.getInstituteHeader(), connection, response);
+        PrintEtatHelper.imprimerEtatImprimable(stored, paramImpression, GeneralUtils.buildEtatParams(), connection, response);
     }
 
     /**

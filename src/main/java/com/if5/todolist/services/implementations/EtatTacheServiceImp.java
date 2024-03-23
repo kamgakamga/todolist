@@ -1,8 +1,8 @@
 package com.if5.todolist.services.implementations;
 
+import com.if5.todolist.dtos.requets.EtatTacheRequestDto;
+import com.if5.todolist.dtos.responses.EtatTacheResponseDto;
 import com.if5.todolist.exceptions.DuplicationEntityException;
-import com.if5.todolist.models.dtos.etatTache.EtatTacheRequestDto;
-import com.if5.todolist.models.dtos.etatTache.EtatTacheResponseDto;
 import com.if5.todolist.models.entities.EtatTache;
 import com.if5.todolist.repositories.EtatTacheRepository;
 import com.if5.todolist.services.interfaces.EtatTacheServiceInter;

@@ -1,12 +1,14 @@
 package com.if5.todolist.controllers.resources;
 
+import com.if5.todolist.dtos.requets.application.projet.ProjetRequestDto;
+import com.if5.todolist.dtos.responses.ApiResponse;
+import com.if5.todolist.dtos.responses.application.projet.ProjetResponseDto;
 import com.if5.todolist.exceptions.DuplicationEntityException;
 import com.if5.todolist.exceptions.EntityNotFoundException;
-import com.if5.todolist.models.dtos.ApiResponse;
-import com.if5.todolist.models.dtos.projet.ProjetRequestDto;
-import com.if5.todolist.models.dtos.projet.ProjetResponseDto;
 import com.if5.todolist.services.interfaces.ProjetServiceInter;
+import com.if5.todolist.utils.GeneralUtils;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -35,6 +37,7 @@ public class ProjetController{
     }
 
     @PostMapping("projets")
+	@ApiOperation("Api permettant d'ajouter un nouveau projet dans la base de donnée.")
 	public ResponseEntity<ApiResponse<ProjetResponseDto>> saveProjet(@RequestBody ProjetRequestDto projetRequestDto) throws DuplicationEntityException, EntityNotFoundException {
 		try{
 			log.info("Ajout d'un projets dans le système en cours"+ projetRequestDto.toString());
@@ -47,6 +50,7 @@ public class ProjetController{
 	}
 
 	@DeleteMapping("projets/{id}")
+	@ApiOperation("Api permettant de supprimer un projet dans la base de donnée.")
 	public ResponseEntity<ApiResponse<String>> deleteProjet(@PathVariable Long id) throws EntityNotFoundException {
         try{
             log.info("Suppresion d'un projets dans le système en cours "+id);
@@ -59,6 +63,7 @@ public class ProjetController{
 	}
 	  
 	@GetMapping("projets")
+	@ApiOperation("Api permettant de lister tous les projets de la la base de donnée.")
 	 public ResponseEntity<ApiResponse<ProjetResponseDto>> getAllProjet(@ApiParam(value = "clé de la recherche") @RequestParam(name = "keyword", defaultValue = "") String keyword,
 																		@ApiParam(value = "Page de la recherche") @RequestParam(name = "page", defaultValue = "0") int page,
 																		@ApiParam(value = "taille de l'élément à afficher ")  @RequestParam(name = "size", defaultValue = "20") int size,
@@ -66,7 +71,7 @@ public class ProjetController{
 																		@RequestParam(name = "orderBy", defaultValue = "id") String orderBy){
 		try{
 			log.info("Liste des projets dans le système");
-		  Page<ProjetResponseDto> data =  projetService.getAllProjet("%"+keyword+"%", PageRequest.of(page, size, Sort.Direction.fromString(sort), orderBy));
+		  Page<ProjetResponseDto> data =  projetService.getAllProjet(GeneralUtils.buildKeyword(keyword), PageRequest.of(page, size, Sort.Direction.fromString(sort), orderBy));
 		 return ResponseEntity.ok(new ApiResponse(true,SUCESS_MESSAGE ,data, new Date()));
 		 }catch (Exception e){
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST)
@@ -75,6 +80,7 @@ public class ProjetController{
 	 } 
 	  
 	  @GetMapping("projets/{id}")
+	  @ApiOperation("Api permettant d'avoir le détail d'un projet.")
 	  public ResponseEntity<ApiResponse<ProjetResponseDto>> getProjetDetail(@PathVariable Long id){
 		  try{
 			  ProjetResponseDto data = projetService.getProjet(id);
