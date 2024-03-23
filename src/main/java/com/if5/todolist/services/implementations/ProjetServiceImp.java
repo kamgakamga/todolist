@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @Transactional
@@ -44,6 +45,10 @@ public class ProjetServiceImp implements ProjetServiceInter{
 			projet = projetRepository.findById(projetRequestDto.getId()).orElseThrow(
 					()->new EntityNotFoundException("Projet à modifier est introuvable"));
 			return ProjetResponseDto.buildDtoFromEntity(projetRepository.save(ProjetRequestDto.buildUpdate(projetRequestDto, projet)));
+		}
+		Projet p = projetRepository.findByNomProjetIgnoreCase(projetRequestDto.getNomProjet());
+		if(!Objects.equals(p, null) && Objects.isNull(projetRequestDto.getId())){
+			throw new DuplicationEntityException("un projet existe déja avec ce nom");
 		}
 		 List<EtatTache> etatTaches = new ArrayList<>();
 		 List<Long> etatId = projetRequestDto.getEtatId().isEmpty() ? new ArrayList<>() : projetRequestDto.getEtatId();
